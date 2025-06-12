@@ -58,21 +58,50 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/people/";
           },
-        },{id: "dropdown-bookshelf",
+        },{id: "dropdown-aio2025",
+              title: "AIO2025",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/AIO/";
+              },
+            },{id: "dropdown-bookshelf",
               title: "bookshelf",
               description: "",
               section: "Dropdown",
               handler: () => {
                 window.location.href = "/books/";
               },
-            },{id: "dropdown-blog",
-              title: "blog",
+            },{id: "dropdown-languages",
+              title: "languages",
               description: "",
               section: "Dropdown",
               handler: () => {
-                window.location.href = "/blog/";
+                window.location.href = "/languages/";
               },
-            },{id: "post-a-post-with-plotly-js",
+            },{id: "post-random-1",
+        
+          title: "random 1",
+        
+        description: "random feelings after my first post",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/post1/";
+          
+        },
+      },{id: "post-research-anything-ai-101",
+        
+          title: "Research Anything AI 101",
+        
+        description: "from Skills for AIO2025 by Dr. Vinh Dinh",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/research101/";
+          
+        },
+      },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
         
