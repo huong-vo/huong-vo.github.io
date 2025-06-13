@@ -79,7 +79,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/languages/";
               },
-            },{id: "post-random-1",
+            },{id: "post-python-for-ai-101",
+        
+          title: "Python for AI 101",
+        
+        description: "basic python with data representation, functions, and conditions",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/python/";
+          
+        },
+      },{id: "post-random-1",
         
           title: "random 1",
         
@@ -94,7 +105,7 @@ ninja.data = [{
         
           title: "Research Anything AI 101",
         
-        description: "from Skills for AIO2025 by Dr. Vinh Dinh",
+        description: "Skills for AIO2025",
         section: "Posts",
         handler: () => {
           
