@@ -44,6 +44,11 @@ td {
 }
 
 // Center code blocks
-.centered-code {
-  text-align: center;
+.bordered-block {
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: 0 20px auto;
+  padding: 10px;
 }
+
+// 
