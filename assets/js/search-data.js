@@ -79,7 +79,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/languages/";
               },
-            },{id: "post-python-for-ai-101",
+            },{id: "post-python-for-ai-102",
+        
+          title: "Python for AI 102",
+        
+        description: "basic python with errors and loops",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/python102/";
+          
+        },
+      },{id: "post-python-for-ai-101",
         
           title: "Python for AI 101",
         
@@ -87,7 +98,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/python/";
+            window.location.href = "/blog/2025/python101/";
           
         },
       },{id: "post-random-1",
