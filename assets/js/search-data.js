@@ -79,22 +79,66 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/languages/";
               },
-            },{id: "post-python-for-ai-102",
+            },{id: "post-python-for-ai-103",
+        
+          title: "Python for AI 103",
+        
+        description: "list",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/python103/";
+          
+        },
+      },{id: "post-git-github",
+        
+          title: "Git Github",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/git-github/";
+          
+        },
+      },{id: "post-python-for-ai-102",
         
           title: "Python for AI 102",
         
-        description: "basic python with errors and loops",
+        description: "basic errors and loops",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2025/python102/";
           
         },
+      },{id: "post-python104",
+        
+          title: "Python104",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/python104/";
+          
+        },
+      },{id: "post-sql102",
+        
+          title: "Sql102",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/sql102/";
+          
+        },
       },{id: "post-python-for-ai-101",
         
           title: "Python for AI 101",
         
-        description: "basic python with data representation, functions, and conditions",
+        description: "basic data representation, functions, and conditions",
         section: "Posts",
         handler: () => {
           
@@ -116,11 +160,44 @@ ninja.data = [{
         
           title: "Research Anything AI 101",
         
-        description: "Skills for AIO2025",
+        description: "skills for AIO2025",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2025/research101/";
+          
+        },
+      },{id: "post-pre103",
+        
+          title: "Pre103",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/pre103/";
+          
+        },
+      },{id: "post-coding-methodology",
+        
+          title: "Coding Methodology",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/coding-methodology/";
+          
+        },
+      },{id: "post-sql101",
+        
+          title: "Sql101",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/sql101/";
           
         },
       },{id: "post-a-post-with-plotly-js",
