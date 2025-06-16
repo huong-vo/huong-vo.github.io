@@ -33,6 +33,7 @@ table, th, td {
 
 th, td {
   padding: 5px !important;
+  vertical-align: top;
 }
 
 th {
@@ -61,9 +62,10 @@ details summary code {
   margin: 10px;
 }
 
-.inside-bordered-block .multi-line-code {
+.multi-line-code {
   display: block;
-  white-space: pre-line;
-  margin: 0 0 5px 0;
+  white-space: pre;
+  margin: 0;
+  padding: 0;
 }
 // 
