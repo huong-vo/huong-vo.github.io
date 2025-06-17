@@ -33,7 +33,6 @@ table, th, td {
 
 th, td {
   padding: 5px !important;
-  vertical-align: top;
 }
 
 th {
@@ -42,6 +41,7 @@ th {
 
 td {
   text-align: left;
+  vertical-align: top;
 }
 
 // Format collapsible blocks
@@ -64,8 +64,8 @@ details summary code {
 
 .multi-line-code {
   display: block;
-  white-space: pre;
+  white-space: pre !important;
   margin: 0;
-  padding: 0;
+  padding: 5px;
 }
 // 
