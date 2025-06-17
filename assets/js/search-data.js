@@ -79,7 +79,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/languages/";
               },
-            },{id: "post-python-for-ai-103",
+            },{id: "post-python-pre105",
+        
+          title: "Python Pre105",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/python-pre105/";
+          
+        },
+      },{id: "post-python-for-ai-103",
         
           title: "Python for AI 103",
         
@@ -176,6 +187,17 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2025/pre103/";
+          
+        },
+      },{id: "post-python-exercises-activation-funtions",
+        
+          title: "Python Exercises Activation Funtions",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/python-exercises-activation-funtions/";
           
         },
       },{id: "post-coding-methodology",
