@@ -79,15 +79,26 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/languages/";
               },
-            },{id: "post-python-pre105",
+            },{id: "post-python-for-ai-105-warm-up",
         
-          title: "Python Pre105",
+          title: "Python for AI 105 Warm-up",
         
-        description: "",
+        description: "OOP - classes and objects",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2025/python-pre105/";
+          
+        },
+      },{id: "post-python-for-ai-104",
+        
+          title: "Python for AI 104",
+        
+        description: "tuple, set, and dictionary",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/python104/";
           
         },
       },{id: "post-python-for-ai-103",
@@ -121,17 +132,6 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2025/python102/";
-          
-        },
-      },{id: "post-python104",
-        
-          title: "Python104",
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/python104/";
           
         },
       },{id: "post-sql102",
@@ -178,15 +178,15 @@ ninja.data = [{
             window.location.href = "/blog/2025/research101/";
           
         },
-      },{id: "post-pre103",
+      },{id: "post-python-pre103",
         
-          title: "Pre103",
+          title: "Python Pre103",
         
         description: "",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/pre103/";
+            window.location.href = "/blog/2025/python-pre103/";
           
         },
       },{id: "post-python-exercises-activation-funtions",
