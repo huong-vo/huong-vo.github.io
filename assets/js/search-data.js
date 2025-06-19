@@ -79,7 +79,29 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/languages/";
               },
-            },{id: "post-python-for-ai-105-warm-up",
+            },{id: "post-sql103",
+        
+          title: "Sql103",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/sql103/";
+          
+        },
+      },{id: "post-python-for-ai-105",
+        
+          title: "Python for AI 105",
+        
+        description: "list",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/python105/";
+          
+        },
+      },{id: "post-python-for-ai-105-warm-up",
         
           title: "Python for AI 105 Warm-up",
         
