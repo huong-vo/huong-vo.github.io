@@ -24,11 +24,17 @@ $max-content-width: {{ site.max_width }};
   "tabler-icons/tabler-icons-outline.scss"
 ;
 
-// Add borders and padding to all tables
+// Style break line between two sections
+hr {
+  width: 50%
+}
+
+// Style all tables
 table, th, td {
   border: 1px solid gray;
   border-collapse: collapse;
-  padding: 5px;
+  padding: 3px;
+  margin: 10px 0;
 }
 
 table {
@@ -46,32 +52,35 @@ th {
 td {
   text-align: left;
   vertical-align: top;
-  overflow-x: auto;
+  // white-space: pre-wrap; // Preserve whitespace and allow wrapping
+}
+
+.centered_td {
+  text-align: center;
+}
+
+.header-code {
+  text-align: left;
 }
 
 // Format collapsible blocks
 .bordered-block {
   border: 1px solid gray;
   border-radius: 5px;
-  margin: 0 30px 5px 30px;
+  margin: 5px 20px;
   padding: 10px;
 }
 
-.inside-bordered-block {
+.bordered-inner-block {
   margin: 10px;
 }
 
-details summary code {
-  display: block;
-  text-align: left;
-  margin: 0 0 5px 0;
-}
-
+// Style code blocks
 pre {
-  overflow-x: scroll;
-  white-space: pre-wrap;
+  overflow-x: auto; // Enable horizontal scrolling for long lines
 }
 
-// code { 
-//   white-space: pre;
-// }
+table pre {
+  overflow-x: auto; // Enable horizontal scrolling for long lines in tables
+  white-space: pre-wrap; // Preserve whitespace and allow wrapping
+}
