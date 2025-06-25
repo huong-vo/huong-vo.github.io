@@ -79,11 +79,22 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/languages/";
               },
-            },{id: "post-python106",
+            },{id: "post-unix-linux-docker",
         
-          title: "Python106",
+          title: "Unix Linux Docker",
         
         description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/unix-linux-docker/";
+          
+        },
+      },{id: "post-python-for-ai-106",
+        
+          title: "Python for AI 106",
+        
+        description: "tree, stack, and queue",
         section: "Posts",
         handler: () => {
           
@@ -116,7 +127,7 @@ ninja.data = [{
         
           title: "Python for AI 105",
         
-        description: "list",
+        description: "class and object",
         section: "Posts",
         handler: () => {
           
@@ -143,6 +154,17 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2025/python104/";
+          
+        },
+      },{id: "post-python-for-ai-10",
+        
+          title: "Python for AI 10*",
+        
+        description: "___________what to learn___________",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/template/";
           
         },
       },{id: "post-python-for-ai-103",
