@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Coding Methodology in Python
-date: 2025-07-01
+date: 2025-07-03
 description: ___________what to learn___________
 tags: coding AIO format
 categories: AI
