@@ -19,12 +19,12 @@ toc:                                          # table of contents
 > Be always intentional when writing and managing code. Learn logics. Don't overuse AI assistant when starting. <br>
 > -Dr. Thai Ha Nguyen
 
-In today's post, we'll explore clean code principles for Python and standard project structures. We'll also discuss some applications in AI including _____________________.
+In today's post, we'll explore clean code principles for Python and standard project structures. We'll mainly mention common concepts without particular examples. Details may be updated in the future. 
 
 <hr>
 
 **Roadmap for learning Data Science** <br>
-{% include figure.liquid loading="eager" path="assets\aio2025\M01W02\saturday_roadmap_datascience.png" class="img-fluid rounded z-depth-1" alt="roadmap for learning data science" caption="Figure 1. Roadmap for learning Data Science" %}
+{% include figure.liquid loading="eager" path="assets\aio2025\M01W02\saturday_roadmap_datascience.png" class="img-fluid rounded z-depth-1" zoomable=true alt="roadmap for learning data science" caption="Figure 1. Roadmap for learning Data Science" %}
 
 Learners should follow the core process of managing a Machine Learning projects. 
 1. Planning
@@ -44,8 +44,11 @@ Our goal of this section is to comprehend and be able to apply clean code princi
 
 Writing code is like building a house. A house can still be completed by putting things together but it's likely not to last long without a blueprint. The same goes for code: without a clear architecture, solid logic, and clean design, it's prone to errors, hard to understand, and difficult to maintain. 
 
+> Anything that can go wrong will go wrong. <br>
+> Edsel Murphey's Law
+
 ### **Clean Code** 
-{% include figure.liquid loading="eager" path="assets\aio2025\M01W02\saturday_clean_code.png" class="img-fluid rounded z-depth-1" alt="clean code principles" caption="Figure 1. Clean code principles" %}
+{% include figure.liquid loading="eager" path="assets\aio2025\M01W02\saturday_clean_code.png" class="img-fluid rounded z-depth-1" zoomable=true alt="clean code principles" caption="Figure 1. Clean code principles" %}
 
 The core principles of clean code are:
 1. **Readable:** "future" we and others should easily understand its purpose and how it works.
@@ -69,7 +72,7 @@ Nevertheless, there are situations where we don't have to clean code:
 - **Short-live/Emergency scripts:** when the system encounters a serious accident, we need to handle the situation first, and refactor afterwards.
 - **Exploratory code:** clean code is unnecessay when learning a concept. 
 - **Sample code:** we can skip clean code when checking some idea in a short time and can always refactor if implementing the idea.
-- **Only-current-you code:** Only current you!
+- **Only-current-you code:** Only current-you need it!
 
 ### **PEP-8**
 PEP-8 is short for Python Enhancement Proposal 8 introduced by Guido van Rossum---Python's inventor. It is the official format for Python code, helps preserving code unity and eligibility for projects.
@@ -219,17 +222,28 @@ pyplint: analyze more than black and grade our code
 mypy: check error
 
 ### **Standard Structure for Projects**
+Similar to writing Python code, it's essential to organize a Python project in order to build a healthy development cycle. There may be a few ways to construct a standard repository structure. Below is one of them. Using files described in the root directory ensures a project is efficiently managed and straightforward for contributors and readers.
+1. Root directory `project_name/`
+    - README.md: outlines a project's goal, setup instructions, usage examples, and contributions
+    - requirements.txt: lists project dependencies
+    - setup.py: defines and installs packages
+    - pyproject.toml (preferred): specifies build íntructions, project dependencies, and project metadata (license, author, descriptions, etc)
+    - .gitignore: contains files and folders Git should ignore/track such as temporary files, log files, or personalfiles.
+2. Source code `project_name/src/`
+    - Main modules
+    - Main packages
+3. Tests `project_name/tests/`
+    - unittest
+    - pytest
+4. Documentation `project_name/docs`
+    - API
+    - Usage
+5. Resources `project_name/resources/`
+    - Static resources
+    - Templates
+    - Assets
 
-cái này là cli gen project phải ko ad? - https://cookiecutter-data-science.drivendata.org/
-
-#### **__________Heading 3____________**
-
-
-
-**Concept Name** <br>
-
-
-
+It's adequate and fast to build our repository structure using **Command-Line Interface generator (CLIgen)** such as [Cookiecutter Data Science](https://cookiecutter-data-science.drivendata.org/).
 
 <hr>
 
@@ -240,108 +254,311 @@ There are 19 guiding principles for Python written by Tim Peters in [PEP 20](htt
 
 We apply Pythonic style to utilize unique features and characteristics of Python. It not only preserves clean code and PEP-8 but adheres to Python's philosophy. Let's take a look at some Pythonic cases.
 
-1. Use List, dict, and set comprehension to create a sequence.
-    - 
-    - 
-2. Context manager `with` helps close files once its task is done.
-    - 
-    - 
-3. Comparison and condition: 
-    - == None is not incorrect but it ghi de -> can give wrong answer
-    - 
-4. @ is decorator -> makes method become attribute
+1. Use list, dict, and set comprehensions to create a sequence.
+    - All on one line makes it faster to create.
+    - It's very readable one you're familiar with the syntax.
+```python
+dict_comprehension = {i: i * i for i in range(7)}
+```
+2. Context manager `with` statement to open and close a file automatically.
+    - `with` prevents memory leak, releases resources correctly, and is safer for exception handling. 
+    - It's commonly used for file management, network database, lock thread, benchmark, transaction database, and so on.
+```python
+with open("file_name.txt", "r") as file:
+    content = file.read()
+```
+3. `@contextmanager` is a decorator.
+    - `@contextmanager` comes from `contextlib`.
+    - It temporarily changes the system configuration and recovers once done.
+    - It measures operation time.
+    - It manages network database, Redis, or API.
+    - It creates a temporaty environment for testing.
+```python
+from contextlib import contextmanager
+@contextmanager
+def file_reader(filename):
+    f = open(filename, "r")
+    try:
+        # perform with statement
+        yield f
+    finally:
+        # clean up everything and close the file
+        f.close()
+# use context manager
+with file_reader("file_name.txt") as file:
+    print(file.read())
+```
+4. `@property` is a decorator, making a method become an attribute.
+    - No need parentheses `()` in the end if there is no argument. 
+5. Comparison and condition: 
+<table class = "language-python">
+    <tr>
+        <th>Technique</th>
+        <th>Pythonic</th>
+        <th>Non-Pythonic</th>
+    </tr>
+    <tr>
+        <td><code>is None</code></td>
+        <td>
+        Check an object's identity: <code>w</code> is not the <code>None</code> object.
+<pre>
+<code class = "highlight">
+class Weird:
+    def __eq__(self, other):
+        # it equals anything
+        return True
 
-### **__________Heading 2____________** 
+w = weird()
+print(w is None)
 
+'''
+False   
+'''
+</code>
+</pre>
+        </td>
+        <td>
+        Check an object's value: <code>w</code> has value of <code>None</code>.
+<pre>
+<code class = "language-python">
+class Weird:
+    def __eq__(self, other):
+        # it equals anything
+        return True
 
+w = weird()
+print(w == None)
 
-#### **__________Heading 3____________**
-
-
-
-**Concept Name** <br>
-
-
-
-### **__________Heading 2____________**
-
-
-
-#### **__________Heading 3____________**
-
-
-
-**Concept Name** <br>
-
-
-
-### **__________Heading 2____________**
-
-
-
-#### **__________Heading 3____________**
-
-
-
-**Concept Name** <br>
-
-
-
+'''
+True
+'''
+</code>
+</pre>
+        </td>
+    </tr>
+    <tr>
+        <td>Boolean</td>
+        <td>
+        Utilize truthfulness.
+<pre>
+<code class = "highlight">
+valid = True
+if valid:
+    print("True")
+</code>
+</pre>
+        </td>
+        <td>
+        Too lengthy.
+<pre>
+<code class = "language-python">
+valid = True
+if valid == True:
+    print("True")
+</code>
+</pre>
+        </td>
+    </tr>
+    <tr>
+        <td>Emptiness:
+        <ul>
+            <li> strings </li>
+            <li> lists </li>
+            <li> dicts </li>
+            <li> sets </li>
+        </ul>
+        </td>
+        <td>
+        Utilize truthfulness.
+<pre>
+<code class = "highlight">
+items = []
+if not items:
+    print("Empty")
+</code>
+</pre>
+        </td>
+        <td>
+        Too lengthy.
+<pre>
+<code class = "language-python">
+items = []
+if len(items) == 0:
+    print("Empty")
+</code>
+</pre>
+        </td>
+    </tr>
+    <tr>
+        <td><code>in</code></td>
+        <td>
+        Check existence directly.
+<pre>
+<code class = "highlight">
+a_list = [1, 2, 3]
+item = 4
+if item in a_list:
+    print(f'{item} is in a_list')
+</code>
+</pre>
+        </td>
+        <td>
+        Too complicated and time-consuming.
+<pre>
+<code class = "language-python">
+a_list = [1, 2, 3]
+item = 4
+for i in a_list:
+    if i == item:
+        print(f'{item} is in a_list')
+        break
+</code>
+</pre>
+        </td>
+    </tr>
+    <tr>
+        <td>Chain comparison</td>
+        <td>
+        Logical.
+<pre>
+<code class = "highlight">
+value = 7
+if 0 < value < 8:
+    print(f'{value} is in range')
+</code>
+</pre>
+        </td>
+        <td>
+        Too lengthy.
+<pre>
+<code class = "language-python">
+value = 7
+if value > 0 and value < 8:
+    print(f'{value} is in range')
+</code>
+</pre>
+        </td>
+    </tr>
+</table>
 
 <hr>
 
 ## **Principles for Writing Neat Code**
 Our goal of this section is to understand various rules and designs to build high-quality code.
+<table class = "language-python">
+    <tr>
+        <th>Principle</th>
+        <th>Benifits</th>
+        <th>Usage</th>
+    </tr>
+    <tr>
+        <td><strong>DRY (Don't Repeat Yourself)</strong></td>
+        <td>
+            <ul>
+                <li> Concise, reusable, and maintainable code. </li>
+                <li> Less errors when changing logic. </li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li> Concepts should be defined in functions, classes, or modules. </li>
+                <li> Each concept should appear only once. </li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>YAGNI (You Aren't Gonna Need It)</strong>  </td>
+        <td>
+            <ul>
+                <li> Avoid wasting time complicate the unnecessary. </li>
+                <li> Reduce technical debt. </li>
+                <li> Concise and maintainable. </li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li> Only add on a feature when truly needed. </li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>KISS (Keep It Simple, Stupid)</strong></td>
+        <td>
+            <ul>
+                <li> Concise, debuggable, maintainable, and extensible code. </li>
+                <li> Less bugs and higher efficiency. </li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li> Always prioritize simple solutions. </li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Defensive Programming</strong></td>
+        <td>
+            <ul>
+                <li> Debuggable, robust, and sustainable code. </li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li> Always anticipate unexpected inputs and potential errors. </li>
+                <li> Always check them. </li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Error Handling</strong></td>
+        <td>
+            <ul>
+                <li> Catch specific bugs and deliver error messages properly. </li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li> <code>assert</code>, <code>logging</code>, and <code>try-except</code>. </li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Separation of Concerns</strong></td>
+        <td>
+            <ul>
+                <li> Maintainable, Reusable, and Testable. </li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li> Each function, class, and module is responsible for one specific task. </li>
+            </ul>
+        </td>
+    </tr>
+</table>
+<br>
 
+As mentioned `logging` can be used to catch bugs in the program. The purposes of using `logging` and `print` may be mistaken for each other. `logging` is a feature to journal code professionally with different levels while `print` is to catch errors quickly but have its own drawbacks.
 
-
-**DRY (Don't Repeat Yourself)** <br>
-Each concept should be defined only once. 
-
-
-**YAGNI (You Aren't Gonna Need It)** <br>
-Only add on features when truly needed. Don't complicate the unnecessary.
-
-overpacking when going on vacation - should check weather
-
-**KISS (Keep It Simple, Stupid)** <br>
-Always prioritize simple solutions, 
-
-
-**Defensive Programming** <br>
-Always be prepared for unexpected inputs and potential errors.
-
-
-**Error Handling** <br>
-Catch specific errors instead of general ones.
-
-
-**Separation of Concerns** <br>
-Each component/module is responsible for their own part in the system.
-
-logging replaces print:
-- classify levels
-- configure logging
+| Print                  | Logging                                      | 
+|------------------------|----------------------------------------------|
+| Easy to use            | Flexible configuration                       |
+| No classified levels   | Classified levels: DEBUG, INFO, WARNING, etc |
+| Hard to switch off     | Configurable on/off switch                   |
+| No add-ons             | Add-ons: time, file, line                    |
+| Hard output management | Direct to file, email, etc                   |
 
 <hr>
 
-## **SOLID Rule and Design Patterns (Advanced)**
+## **SOLID Rule and Design Patterns (Advanced)** - to be updated
 Our goal of this section is to learn how to organize projects, divide into modules, and write highly extensible code.
-
-
-### **__________Heading 2____________** 
-
-
-
-#### **__________Heading 3____________**
-
 
 
 **Single Responsibility** <br>
 
 
 **Open/Closed** <br>
-This principle means open for adding new features and closed for changing existing features. 
+<!-- This principle means open for adding new features and closed for changing existing features.  -->
 
 
 **Liskov Substitution** <br>
@@ -355,302 +572,17 @@ This principle means open for adding new features and closed for changing existi
 **Dependency Inversion** <br>
 
 
-ask about settings.json file to configure flake8 ...
+<!-- ask about settings.json file to configure flake8 ...
 
-pre commit git hook 
+ask about slide with answer key -->4
 
-make file
 
-ask about slide with answer key
-### **__________Heading 2____________**
 
+:pushpin: **Pro tip:** Use AI to create problems, with hint docstrings, and test cases. Export it to colab files and start practicing. Once you've done, ask AI to analyze your solutions and provide answer keys and learned lessons. You can use lecture slides as an attachment to your question. 
 
+A sample prompt: "Create twenty Python programming problems from easy to diffcult. They should adhere to the lesson content in slides attached. They should have hint docstrings and test cases for each problem and learners need to complete them. After that, provide solutions separately and give lessons learned from each problem."
 
-#### **__________Heading 3____________**
-
-
-
-**Concept Name** <br>
-
-
-
-### **__________Heading 2____________**
-
-
-
-#### **__________Heading 3____________**
-
-
-
-**Concept Name** <br>
-
-
-
-
-| Header Name 1    | Header Name 2    | Header Name 3    | 
-|:----------------:|:----------------:|:----------------:|
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-
-<br>
-
-
-
-
-____________________________________________________________________TABLE ONLY____________________________________________________________________
-<table class = "language-python">
-    <tr>
-        <th>Header name 1</th>
-        <th>Header name 2</th>
-        <th>Header name 3</th>
-    </tr>
-    <tr>
-        <td>
-            <strong>Row content 1</strong>
-            <ul>
-                <li> ______________________________________________ </li>
-                <li> ______________________________________________ </li>
-            </ul>
-        </td>
-        <td>
-<pre>
-<code class = "language-python">
-# _________________explanation_________________
-
-_________________setup_________________
-
-# test
-_________________code_________________
-
-'''
-_________________rendered output_________________
-'''
-</code>
-</pre>
-        </td>
-        <td>
-<pre>
-<code class = "language-python">
-# _________________explanation_________________
-
-_________________setup_________________
-
-# test
-_________________code_________________
-
-'''
-_________________rendered output_________________
-'''
-</code>
-</pre>
-        </td>
-    </tr>
-</table>
-<br>
-
-
-
-____________________________________________________________________COLLAPSIBLE BLOCK WITH TABLE INSIDE____________________________________________________________________
-<details class = "bordered-block">
-    <summary>
-        <strong>Practice Exercises</strong>
-    </summary>
-    <div class = "inside-bordered-block language-python">
-        <strong>Exercise 1:</strong> _____________________________________________________
-        <br>
-        <strong>Exercise 2:</strong> _____________________________________________________
-        <table class = "language-python">
-            <tr>
-                <th>Header name 1</th>
-                <th>Header name 2</th>
-                <th>Header name 3</th>
-            </tr>
-            <tr>
-                <td>
-                    <strong>Row content 1</strong>
-                    <ul>
-                        <li> ______________________________________________ </li>
-                        <li> ______________________________________________ </li>
-                    </ul>
-                </td>
-                <td>
-<pre>
-<code class = "language-python">
-# _________________explanation_________________
-
-_________________setup_________________
-
-# test
-_________________code_________________
-
-'''
-_________________rendered output_________________
-'''
-</code>
-</pre>
-                </td>
-                <td>
-<pre>
-<code class = "language-python">
-# _________________explanation_________________
-
-_________________setup_________________
-
-# test
-_________________code_________________
-
-'''
-_________________rendered output_________________
-'''
-</code>
-</pre>
-                </td>
-            </tr>
-        </table>
-        <br>
-        <strong>Exercise 3:</strong> _____________________________________________________
-    </div>
-</details>
-<br>
-
-
-
-____________________________________________________________________COLLAPSIBLE BLOCK WITH EXERCISES ONLY____________________________________________________________________
-<details class = "bordered-block">
-    <summary>
-        <strong>Practice Exercises</strong>
-    </summary>
-    <div class = "bordered-inner-block language-python">
-        <strong>Exercise 1:</strong> ____________________________________________________________________________ 
-        <br>
-        <strong>Exercise 2:</strong> ____________________________________________________________________________ 
-        <br>
-        <strong>Hints:</strong> ____________________________________________________________________________ 
-        <br>
-        <strong>Exercise 3:</strong> ____________________________________________________________________________ 
-        <ul>
-            <li> ______________________________________________ </li>
-            <li> ______________________________________________ </li>
-        </ul>
-        <strong>Exercise 4:</strong> ____________________________________________________________________________ 
-        <ol>
-            <li> ______________________________________________ </li>
-            <li> ______________________________________________ </li>
-        </ol>
-    </div>
-</details>
-<br>
-
-
-
-____________________________________________________________________COLLAPSIBLE BLOCK WITH EXERCISES AND CODE____________________________________________________________________
-<details class = "bordered-block">
-    <summary>
-        <strong>Practice Exercises</strong>
-    </summary>
-    <div class = "bordered-inner-block language-python">
-        <strong>Exercise 1:</strong> ____________________________________________________________________________ 
-<pre>
-<code class = "language-python">
-_________________code_________________
-</code>
-</pre>
-        <strong>Exercise 2:</strong> ____________________________________________________________________________ 
-        <br>
-        <strong>Exercise 3:</strong> ____________________________________________________________________________ 
-        <ol>
-            <li> ______________________________________________ </li>
-            <li> ______________________________________________ </li>
-        </ol>
-        <strong>Exercise 4:</strong> ____________________________________________________________________________ 
-        <ul>
-            <li> ______________________________________________ </li>
-            <li> ______________________________________________ </li>
-        </ul>
-    </div>
-</details>
-<br>
-
-
-
-
-1. **_______main idea_________:** ______________________content - explanation_________________________
-2. **_______main idea_________:** ______________________content - explanation_________________________
-3. **_______main idea_________:** ______________________content - explanation_________________________
-    - **_______main idea_________:** ______________________content - explanation_________________________
-    - **_______main idea_________:** ______________________content - explanation_________________________
-    - **_______main idea_________:** ______________________content - explanation_________________________
-
-
-
-
-- **_______main idea_________:** ______________________content - explanation_________________________
-- **_______main idea_________:** ______________________content - explanation_________________________
-- **_______main idea_________:** ______________________content - explanation_________________________
-
-
-
-
-:bulb: **Applications in AI**
-
-
-
-
-:pushpin: **Pro tip:** __________________________________________________________________
-
-
-
-
-:warning: __________________________________________________________________
-
-
-
-
-:heavy_exclamation mark: __________________________________________________________________
-
-
-
-
-:question: **__________________________________________________________________?**
-
-
-
-
-```python
-__________________________________________________
-
->>>
-```
-
-
-
-
-❌
-✅
-⚠️
-
-
-
+<https://colab.research.google.com/drive/1hwdu33Mo1wxoOcNWV80qSy2YWVodtyeL?usp=sharing>
 
 <hr>
 
@@ -665,35 +597,20 @@ Here are some good questions asked during class. The answers to these questions 
 | What is Explainable AI? | The process is input -> complex AI model -> explaining the model and its results -> users understand the decision -> output. Check out [XAI Overview](https://blog.vinbigdata.org/khai-quat-ve-explainable-ai/). |
 | What is a data engineer, data analyst, and data scientist? | DE manages data, DA retrieves basic information using statistic models, and DS uses ML/DL to investigate larger datasets. |
 | What does refactor mean? | Refactoring code is the process of changing structure of source code without changing the program's primary behavior. |
-| Question | Answer |
-| Question | Answer |
-| Question | Answer |
-| Question | Answer |
-| Question | Answer |
+| What do I use requirement.txt for? | You can remove or update a library by just updating this file and pushing to the repository. |
+| Resources for more complex Pythonic techniques like tensor/dataframe/array | You can utilize vectorized operations of libraries. Documentation can be found at[here](https://docs.pytorch.org/tensordict/main/tutorials/tensordict_slicing.html). |
+| What are Redis and API? | Redis is cache database, supporting quick computations when needed but storing them is inconvenient. API (Application Programming Interface) is a network/collection of rules, methods, and data formats a software or service provides so that other programs can call and interact with. |
+| How do I check all code before pushing to github? | `pre commit git hook` |
 
 
-Dùng AI tạo bài tập + tạo test cases, để các TODO lại cho mình làm để học hỏi. Sau khi viết xong bảo AI phân tích lời giải của mình và trình bày đáp án, lesson học được. Các bạn có thể bảo Gemini/ChatGPT tạo bài tập từ bài học slide trên lớp rồi export ra Colab và luyện tập, ví dụ như file dưới đây: https://colab.research.google.com/drive/1hwdu33Mo1wxoOcNWV80qSy2YWVodtyeL?usp=sharing. Prompt cho Gemini (bạn nhớ đính kèm file slide bài học trên lớp):
-Hãy tạo 20 bài tập lập trình Python có độ khó tăng dần từ dễ đến rất khó, có tính sư phạm cao minh hoạ sát nội dung của bài học trong tài liệu đính kèm. Bạn hãy viết chương trình Python có sẵn test case cho từng bài, và người học sẽ phải lập trình các đoạn TODO. Tách riêng phần đề bài và phần đáp án. Nêu bài học rút ra ứng với từng bài tập.
 
+<!-- Try Except để bắt lỗi thôi bạn, Ví dụ như các lỗi ở slide M01W01 - Self-study.  thì mình sẽ try except lỗi đó, để ứng dụng ko bị crash. If-else để xử lý condition thôi nè. Sử dụng try-except khi bạn dự đoán một đoạn code có thể có lỗi do một điều kiện ngoại lệ không mong muốn, và bạn muốn bắt và xử lý điều đó. Ví dụ bạn a/b b có thể = 0 vậy thì bạn sẽ catch lỗi này và đưa ra một xử lý phù hợp đê chương trình không bị dừng đột ngột, hoặc một số ngoại lệ, lỗi mà bạn không biết trước. Sử dụng if-else khi bạn cần kiểm tra một điều kiện đã biết và quyết định luồng chương trình dựa trên kết quả kiểm tra đó. -->
 
-Có thấy dùng requierement khi nào ạ - thường dùng để cài đặt dependency, cho project á bạn. requirements.txt dùng để liệt kê và cố định phiên bản các thư viện Python mà dự án cần, giúp bạn và đồng đội (hay hệ thống CI/CD, server deploy) dễ dàng tái tạo môi trường đúng như đã test bằng lệnh pip install -r requirements.txt. Khi thêm, loại bỏ hoặc nâng cấp thư viện, bạn chỉ cần cập nhật file này, sau đó chia sẻ trong repo để mọi nơi cài đặt đồng nhất
-
-models vs models trong src khác gì nhau ạ - Cái models ngoài, là để chứa các trained models. Còn cái models trong src, là chứa mã nguồn để viết các hàm train lên model
-
-cho em hỏi những kỹ thuật pythonic trong các dạng data phức tạp hơn, như tensor/dataframe/array thì có thể đọc thêm ở đâu ạ - Thường thì theo mình thấy ở các kiể như tensor thì tránh dùng vòng lặp for của Python và tận dụng các hàm được tối ưu hóa vectorized operations của thư viện. Mỗi thư viện họ sẽ có document riêng hướng dẫn ví dụ của Pytorh: https://docs.pytorch.org/tensordict/main/tutorials/tensordict_slicing.html
-
-
-redis va APIs la gi a? Redis là database dạng cache, giúp truy vấn tính toán nhanh khi cần, nhưng ko tiện để lưu trữ Còn api thì hiểu nôm na là cái kết nối mọi thứ ko cùng chung 1 nền tảng lại với nhau. Redis là một hệ quản trị cơ sở dữ liệu dạng key–value. API Application Programming Interface là giao diện lập trình ứng dụng, tập hợp các quy tắc, phương thức và định dạng dữ liệu mà một phần mềm (hoặc service) cung cấp để các chương trình khác gọi vào và tương tác
-
-Anything that can go wrong will go wrong - https://en.wikipedia.org/wiki/Murphy%27s_law
-
-Try Except để bắt lỗi thôi bạn, Ví dụ như các lỗi ở slide M01W01 - Self-study.  thì mình sẽ try except lỗi đó, để ứng dụng ko bị crash. If-else để xử lý condition thôi nè. Sử dụng try-except khi bạn dự đoán một đoạn code có thể có lỗi do một điều kiện ngoại lệ không mong muốn, và bạn muốn bắt và xử lý điều đó. Ví dụ bạn a/b b có thể = 0 vậy thì bạn sẽ catch lỗi này và đưa ra một xử lý phù hợp đê chương trình không bị dừng đột ngột, hoặc một số ngoại lệ, lỗi mà bạn không biết trước. Sử dụng if-else khi bạn cần kiểm tra một điều kiện đã biết và quyết định luồng chương trình dựa trên kết quả kiểm tra đó.
-
-nhưng ví dụ như cái hàm a/b mình cũng có thể đưa ra if b=0 thì xử lý sao phải k ạ - đúng rồi một số trường hợp có thể thay thế cho nhau, một số thì không ví dụ catch những lỗi mình chưa biết. nếu dung if thì bạn phải liệt kê ra tất cả trường hợp có thể xảy ra (mà cái này gần như bất khả thi do có nhiều lỗi mình kh lường trước được). Nên phải dung try except để bắt hết tất cả những lỗi xảy ra với đoạn code đó mà kh làm gián đoạn chương trình
+<!-- nhưng ví dụ như cái hàm a/b mình cũng có thể đưa ra if b=0 thì xử lý sao phải k ạ - đúng rồi một số trường hợp có thể thay thế cho nhau, một số thì không ví dụ catch những lỗi mình chưa biết. nếu dung if thì bạn phải liệt kê ra tất cả trường hợp có thể xảy ra (mà cái này gần như bất khả thi do có nhiều lỗi mình kh lường trước được). Nên phải dung try except để bắt hết tất cả những lỗi xảy ra với đoạn code đó mà kh làm gián đoạn chương trình -->
 
 <br>
-<!-- 
-#### Check List
+
+<!-- #### Check List
 
 - [x] Exercise 1 (date)
 - [ ] Exercise 2 (date)
