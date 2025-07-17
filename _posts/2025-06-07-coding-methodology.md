@@ -2,7 +2,7 @@
 layout: post
 title: Coding Methodology in Python
 date: 2025-07-03
-description: clean code principles
+description: pep-8, clean code
 tags: coding AIO format
 categories: AI
 giscus_comments: true                         # github comment - automatically generated - not working for now
