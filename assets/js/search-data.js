@@ -79,37 +79,169 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/languages/";
               },
-            },{id: "post-unix-linux-docker",
+            },{id: "post-math-for-ai-106",
         
-          title: "Unix Linux Docker",
+          title: "Math for AI 106",
         
-        description: "",
+        description: "mean, correlation, covariance, correlation coefficient",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/unix-linux-docker/";
+            window.location.href = "/blog/2025/math106/";
+          
+        },
+      },{id: "post-math-for-ai-105",
+        
+          title: "Math for AI 105",
+        
+        description: "mean, median, variance, PDF, PMF, CDF, historgram",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/math105/";
+          
+        },
+      },{id: "post-math-for-ai-105-warm-up",
+        
+          title: "Math for AI 105 Warm-up",
+        
+        description: "random variable, expectation, variance, standard deviation, covariance, correlation",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/math-pre105/";
+          
+        },
+      },{id: "post-sql-for-ai-103",
+        
+          title: "SQL for AI 103",
+        
+        description: "subqueries, procedure, trigger",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/sql103/";
+          
+        },
+      },{id: "post-git-amp-github-for-version-control",
+        
+          title: "Git &amp; GitHub for Version Control",
+        
+        description: "git, github",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/git-github/";
+          
+        },
+      },{id: "post-math-for-ai-104",
+        
+          title: "Math for AI 104",
+        
+        description: "NBC, Gaussian function",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/math104/";
+          
+        },
+      },{id: "post-math-for-ai-103",
+        
+          title: "Math for AI 103",
+        
+        description: "probability, bayes theorem",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/math103/";
+          
+        },
+      },{id: "post-math-for-ai-103-warm-up",
+        
+          title: "Math for AI 103 Warm-up",
+        
+        description: "probability, bayes rule",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/math-pre103/";
+          
+        },
+      },{id: "post-math-for-ai-102",
+        
+          title: "Math for AI 102",
+        
+        description: "linear algebra",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/math102/";
+          
+        },
+      },{id: "post-math-for-ai-101",
+        
+          title: "Math for AI 101",
+        
+        description: "numpy matrix, image brightness",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/math101/";
+          
+        },
+      },{id: "post-coding-methodology-in-python",
+        
+          title: "Coding Methodology in Python",
+        
+        description: "pep-8, clean code",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/coding-methodology/";
+          
+        },
+      },{id: "post-sql-for-ai-102",
+        
+          title: "SQL for AI 102",
+        
+        description: "ERD and database normalization",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/sql102/";
+          
+        },
+      },{id: "post-math-for-ai-101-warm-up",
+        
+          title: "Math for AI 101 Warm-up",
+        
+        description: "numpy matrix",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/math-pre101/";
           
         },
       },{id: "post-python-for-ai-106",
         
           title: "Python for AI 106",
         
-        description: "tree, stack, and queue",
+        description: "tree, stack, queue",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2025/python106/";
           
         },
-      },{id: "post-sql103",
+      },{id: "post-sql-for-ai-101",
         
-          title: "Sql103",
+          title: "SQL for AI 101",
         
-        description: "",
+        description: "database",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/sql103/";
+            window.location.href = "/blog/2025/sql101/";
           
         },
       },{id: "post-random-2",
@@ -127,7 +259,7 @@ ninja.data = [{
         
           title: "Python for AI 105",
         
-        description: "class and object",
+        description: "OOP, class, object",
         section: "Posts",
         handler: () => {
           
@@ -138,7 +270,7 @@ ninja.data = [{
         
           title: "Python for AI 105 Warm-up",
         
-        description: "OOP - classes and objects",
+        description: "OOP, class, object",
         section: "Posts",
         handler: () => {
           
@@ -149,22 +281,11 @@ ninja.data = [{
         
           title: "Python for AI 104",
         
-        description: "tuple, set, and dictionary",
+        description: "tuple, set, dictionary",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2025/python104/";
-          
-        },
-      },{id: "post-python-for-ai-10",
-        
-          title: "Python for AI 10*",
-        
-        description: "___________what to learn___________",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/template/";
           
         },
       },{id: "post-python-for-ai-103",
@@ -178,44 +299,33 @@ ninja.data = [{
             window.location.href = "/blog/2025/python103/";
           
         },
-      },{id: "post-git-github",
+      },{id: "post-python-for-ai-103-warm-up",
         
-          title: "Git Github",
+          title: "Python for AI 103 Warm-up",
         
-        description: "",
+        description: "list",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/git-github/";
+            window.location.href = "/blog/2025/python-pre103/";
           
         },
       },{id: "post-python-for-ai-102",
         
           title: "Python for AI 102",
         
-        description: "basic errors and loops",
+        description: "basic errors, loop",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2025/python102/";
           
         },
-      },{id: "post-sql102",
-        
-          title: "Sql102",
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/sql102/";
-          
-        },
       },{id: "post-python-for-ai-101",
         
           title: "Python for AI 101",
         
-        description: "basic data representation, functions, and conditions",
+        description: "basic data types, function, condition",
         section: "Posts",
         handler: () => {
           
@@ -244,17 +354,6 @@ ninja.data = [{
             window.location.href = "/blog/2025/research101/";
           
         },
-      },{id: "post-python-pre103",
-        
-          title: "Python Pre103",
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/python-pre103/";
-          
-        },
       },{id: "post-python-exercises-activation-funtions",
         
           title: "Python Exercises Activation Funtions",
@@ -266,26 +365,26 @@ ninja.data = [{
             window.location.href = "/blog/2025/python-exercises-activation-funtions/";
           
         },
-      },{id: "post-coding-methodology",
+      },{id: "post-python-for-ai-10",
         
-          title: "Coding Methodology",
+          title: "Python for AI 10*",
         
-        description: "",
+        description: "___________what to learn___________",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/coding-methodology/";
+            window.location.href = "/blog/2025/unix-linux-docker/";
           
         },
-      },{id: "post-sql101",
+      },{id: "post-python-for-ai-10",
         
-          title: "Sql101",
+          title: "Python for AI 10*",
         
-        description: "",
+        description: "___________what to learn___________",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/sql101/";
+            window.location.href = "/blog/2025/template/";
           
         },
       },{id: "post-a-post-with-plotly-js",
