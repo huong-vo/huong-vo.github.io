@@ -591,7 +591,7 @@ Here are some good questions asked during class. The answers to these questions 
 
 | Questions | Answers |
 |-----------|---------|
-| Resources | [Mathematics for Machine Learning](https://course.ccs.neu.edu/ds4420sp20/readings/mml-book.pdf) and [Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/wp-content/uploads/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf) |
+| Resources | [Mathematics for Machine Learning](https://course.ccs.neu.edu/ds4420sp20/readings/mml-book.pdf), [Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/wp-content/uploads/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf), and <https://colab.research.google.com/drive/14H2oCxe06k28z30SKhdXMGxvtNneXGhs?usp=drive_link#scrollTo=QaAlW_n1Qirb> |
 | What is CI/CD? | CI/CD is short for Continuous Integration and Continuous Delivery/Deployment, respectively. This is a DepOvs method to automate and speed up software development. |
 | What is Cloud Computing? | Cloud Computing is the delivery of computing services including serves, storage, databases, networking over the Internet. |
 | What is Explainable AI? | The process is input -> complex AI model -> explaining the model and its results -> users understand the decision -> output. Check out [XAI Overview](https://blog.vinbigdata.org/khai-quat-ve-explainable-ai/). |
