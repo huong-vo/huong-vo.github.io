@@ -2,7 +2,7 @@
 layout: post
 title: Data Visualization and Analysis for AI 101 Warm-up
 date: 2025-08-04
-description: pandas, series, dataframe
+description: pandas, series, dataframe, visualization, seaborn
 tags: coding AIO prob-stat
 categories: AI
 giscus_comments: true                         # github comment - automatically generated - not working for now
@@ -14,10 +14,7 @@ toc:                                          # table of contents
 
 **Acknowledgement:** This post is based mainly on TA Nguyen Quoc Thai's presentation and slides and partly on on TA, STA, and peers' responses from the course AIO2025 offered by AI VIETNAM.
 
-**Relevance:** The audience of this lecture were those who have read [Math for AI 101]({% post_url 2025-07-04-math102 %}), had some coding experience, and known a bit of AI knowledge. Absolute beginners are encouraged to read the material and repeatedly practice coding without AI assistance to strengthen their coding and code-reading skills. Note that only necessary Python knowledge is introduced here.
-
-> ______________________quote______________________ <br>
-> -quoter's name
+**Relevance:** The audience of this lecture were those who have read [Math for AI 102]({% post_url 2025-07-04-math102 %}), had some coding experience, and known a bit of AI knowledge. Absolute beginners are encouraged to read the material and repeatedly practice coding without AI assistance to strengthen their coding and code-reading skills. Note that only necessary pandas knowledge is introduced here.
 
 In today's post, we'll explore basic pandas using examples: Pokemon Data Analysis and Time Series Dataset.
 
