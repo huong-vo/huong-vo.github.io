@@ -57,6 +57,8 @@ flowchart LR
     <em>Figure 1.</em> Data Science Process
 </figcaption>
 
+:pushpin: **Pro tip:** Learning how to use libraries to visualize datasets is a small step in the big picture. Beginners should focus on building and sharpening critical thinking and analysis mindset to understand data and determine what charts to apply and how to use them.
+
 <hr>
 
 ## **Choose the Right Chart Type**
@@ -188,14 +190,14 @@ With a large dataset, it's commonly challenging for audiences to see a specific 
 ~~DEMONSTRATION~~
 
 ### **Box Plot** 
-A **boxplot** or **box and whisker plot** is used to portray the data *outliers* and distribution with minimum, maximum, and *quartiles* explicitly.
+A **boxplot** or **box and whisker plot** is used to portray the data *outliers* and distribution with minimum, maximum, and *quartiles* (excluding outliers) explicitly.
 
 ~~DEMONSTRATION lke~~
 
 **Quartiles** are $25\%$, $50\%$, and $75\%$ we talked about in the previous post. We always sort the data before determining these quartiles.
-- $50%$ is the median of the entire dataset, denoted **Q2**.
-- $25%$ is the median of the first half, denoted **Q1**.
-- $75%$ is the median of the second half, denoted **Q3**.
+- $50\%$ is the median of the entire dataset, denoted **Q2**.
+- $25\%$ is the median of the first half, denoted **Q1**.
+- $75\%$ is the median of the second half, denoted **Q3**.
 
 An **outlier** is a data point that stands out---way out---from the rest. Outliers can have a big impact on how we interpret data. If we're not careful, they can skew our results and lead us to the wrong conclusions. Take linear regression for example, a dataset with outliers can be pulled in a direction completely different from that without ones. Sometimes they are *real valuable* but can be just *noise* other times. Thus, it's important to identify outliers and delicately handle them. 
 
@@ -210,43 +212,40 @@ This formula comes from the idea that outliers should stay outside of the range 
 - $(\mu - 2\sigma, \mu + 2\sigma)$ accounts for 95.45% data points.
 - $(\mu - 3\sigma, \mu + 3\sigma)$ accounts for 99.73% data points.
 
-Using these values, we can eventually have that $(\mu - 0.675\sigma, \mu + 0.675\sigma)$ accounts for IQR. If we try some numbers in the place of 1.5, we can conclude that it is actually what we want.
+Using these values, we can eventually have that $(\mu - 0.675\sigma, \mu + 0.675\sigma)$ accounts for IQR. If we try some numbers in the place of 1.5, we can conclude that it is actually what we want. This is called the **$1.5$ IQR Rule** created by John Tukey.
 
 ~~DEMONSTRATION~~
-~~outliers are small hollow circles above the max or below the min.~~
+~~outliers are small hollow circles above the max or below the min (excluding outliers).~~
 
+### **Bar Chart**
+A bar chart is used to show the change in the values of a particular variable with respect to others or comparison among mutilple variables. It is also one of the most commonly used charts, generally appearing in discrete or categorical data. It can be horizontal or vertical. 
 
+~~DEMONSTRATION~~
 
+:pushpin: **Note:** There are a couple of tips we can apply when working with data, especially for a bar chart.
+- When there is a large difference among values of variables, it's best practice to normalize the data to fit in a range uniformly.
+- The stacked bar chart can be used as a filter to check the relibability of a dataset. That is, we can graph a stacked bar chart to see if there are too many negative/unacceptable values. 
 
-#### **__________Heading 3____________**
+### **Donut Chart**
+A **donut chart** is a type of [pie chart](#pie) with a hole in the center, looking like a flat donut. This chart can be used to display the proportions of *categorical data* or check the reliability of a dataset like a stacked bar chart. 
 
+~~DEMONSTRATION~~
 
+### **Correlation Chart** 
+As its name suggests, a **correlation chart** is used to demonstrate the association between pairs of variables. There are two common types of correlation charts: a *heatmap* and a *scatter plot*. 
 
-**Concept Name** <br>
+A **heatmap** is basically a 2D colored table of squares showing the correlation coefficients between every pair of variables. Based on this chart, we can choose property pairs we're interested in to further the investigation. However, this map is mainly for those who are familiar with data analysis. 
 
+We can instead use a **pairplot** to exhibit the pairwise bivaritate distrbutions to amateurs. Rather than coefficient numbers, it draws scatter plots' all possible variable pairs in one chart. Using a pairplot may save time explaining what numerical values mean. 
 
+Taking one of the graphs from a pairplot, we obtain a **scatter plot** which is illustrate the correlationship between two specific properties. 
 
-### **__________Heading 2____________**
+~~DEMONSTRATION~~
 
+### **Pie Chart** {#pie}
+A **pie chart** shows the distribution of a dataset or relative contribution of each variable to the entire set.
 
-
-#### **__________Heading 3____________**
-
-
-
-**Concept Name** <br>
-
-
-
-### **__________Heading 2____________**
-
-
-
-#### **__________Heading 3____________**
-
-
-
-**Concept Name** <br>
+~~DEMONSTRATION~~
 
 <details class = "bordered-block">
     <summary>
@@ -257,348 +256,157 @@ Using these values, we can eventually have that $(\mu - 0.675\sigma, \mu + 0.675
         <br>
         <strong>Exercise 2:</strong> Use the information given about area percentage in the Box Plot section to work out the conclusion about IQR and the constant 1.5.
         <br>
-        <strong>Hints:</strong> ____________________________________________________________________________ 
-        <br>
-        <strong>Exercise 3:</strong> ____________________________________________________________________________ 
-        <ul>
-            <li> ______________________________________________ </li>
-            <li> ______________________________________________ </li>
-        </ul>
-        <strong>Exercise 4:</strong> ____________________________________________________________________________ 
-        <ol>
-            <li> ______________________________________________ </li>
-            <li> ______________________________________________ </li>
-        </ol>
+        <strong>Exercise 3:</strong> Practice drawing the given dataset with charts above with librabies.
     </div>
 </details>
-<br>
-
 
 <hr>
 
-## **__________Heading 1____________**
+## **Case Study 2: [Student Performance Dataset (SPD)](https://www.kaggle.com/datasets/spscientist/students-performance-in-exams)**
 
+{% include figure.liquid loading="eager" path="assets\aio2025\M03W01\friday_sp_head5.png" class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true max-width="400px" max-height="450px" alt="the first five rows of the SPD" caption="<em>Figure .</em>The first five rows of the SPD" %}
 
+### **Count Plot** 
+A **count plot** is a column chart and basically used to count and show the number of observations in a dataset. It is very useful for categorical/non-numerical data points. 
 
-### **__________Heading 2____________** 
+~~DEMONSTRATION~~
 
+<details class = "bordered-block">
+    <summary>
+        <strong>Practice Exercises</strong>
+    </summary>
+    <div class = "bordered-inner-block language-python">
+        <strong>Exercise 1:</strong> What questions can you raise for this dataset at a first glance on the first five rows?
+        <br>
+        <strong>Exercise 2:</strong> For each question, what charts type would you use?
+        <br>
+        <strong>Exercise 3:</strong> Practice drawing the given dataset with charts above with librabies. 
+    </div>
+</details>
 
+<hr>
 
-#### **__________Heading 3____________**
+## **Case Study 3: [Iris Dataset (IrD)](https://www.kaggle.com/datasets/saurabh00007/iriscsv)**
 
+{% include figure.liquid loading="eager" path="assets\aio2025\M03W01\friday_ir_head5.png" class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true max-width="400px" max-height="450px" alt="the first five rows of the IrD" caption="<em>Figure .</em>The first five rows of the IrD" %}
 
+### **Histogram**
+A **histogram** is used to display the frequency distribution of a variable with horizontal or vertical bins. We came across this chart type when discussing image data. 
 
-**Concept Name** <br>
+We can apply a histogram to observe both discrete and continuous data. It can be considered as a detailed graph for a boxplot above. Looking at a histogram, we can tell how a dataset is spread out and how skewed it is. 
 
+~~DEMONSTRATION~~
 
+### **Bubble Chart**
+A **bubble chart** looks similar to a scatter plot but for three variables. It is *not* a 3D plot; it subtlely corresponds the size of dots on the graph to the *third* variable.
 
-### **__________Heading 2____________**
+~~DEMONSTRATION~~
 
+### **KDE Chart**
+A **Kernel Density Estimate (KDE) plot** can be thought of as a smooth version of one or more histograms in one graph. Instead of using the real values, this plot visualize the *probability density* of a continuous variable. If there are at least two variables shown, the graph is called a **2D KDE plot**. This chart can be found on the diagonal of a pairplot.
 
+This chart is widely exploited in *Machine Learning*. We will talk more about the mathematical idea behind it in the future. 
 
-#### **__________Heading 3____________**
+~~DEMONSTRATION~~
 
+### **Displot Chart**
+A **displot chart** combines a histogram of a particular variable and the KDE, that is, a distribution curve on top. This can be use for both discrete and continuous data. 
 
+~~DEMONSTRATION~~
 
-**Concept Name** <br>
+### **3D Visualization**
+A **3D plot** is used to observe the relationship among three numerical variables. Some common 3D plots are *scatter plots*, *surface plots*, and *contour plots*.
 
+For two numerical variables and one categorical variable, we just need to use a 2D plot with colors for each numerical values. 
 
+~~DEMONSTRATION~~
 
-### **__________Heading 2____________**
+<details class = "bordered-block">
+    <summary>
+        <strong>Practice Exercises</strong>
+    </summary>
+    <div class = "bordered-inner-block language-python">
+        <strong>Exercise 1:</strong> What questions can you raise for this dataset at a first glance on the first five rows?
+        <br>
+        <strong>Exercise 2:</strong> For each question, what charts type would you use?
+        <br>
+        <strong>Exercise 3:</strong> Practice drawing the given dataset with charts above with librabies. 
+    </div>
+</details>
 
+<hr>
 
+## **Case Study 4: App Review Dataset (ARD)**
+As we know, not all values in a dataset are numerical. For example, this dataset can have the "Rating" column include only numbers, but its "Review" column contains just words. *How do we know which words are positive and which ones are negative?*
 
-#### **__________Heading 3____________**
+### **Tag Cloud Chart**
+In this case, a common solution is to figure out the *frequencey* or *importance* of those words. A popular chart that can visualize this is called a **tag cloud**. It provides information about the context of the data. The bigger the word is, the more it appears in the dataset.
 
+These kinds of visualization play a critical role in analyzing data from social networking websites and exploring data before performing *Natural Language Processing (NLP)*.
 
+~~DEMONSTRATION~~
 
-**Concept Name** <br>
+## **Summary**
+Below are some tips for selecting the proper charts for visualization based on types.
 
-<figure>
-<div style='display: flex; flex-wrap:wrap; column-gap: 20px; justify-content: center'>
-    {% include figure.liquid loading="eager" path="_____" class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true max-width="350px" max-height="450px" alt="_____" caption="_____" %} 
-
-    {% include figure.liquid loading="eager" path="_____" class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true max-width="350px" max-height="450px" alt="_____" caption="_____" %} 
-
-    {% include figure.liquid loading="eager" path="_____" class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true max-width="350px" max-height="450px" alt="_____" caption="_____" %} 
-</div>
-<figcaption style="text-align:center; width:100%; font-size:0.875em; margin-top:-25px;">
-    Venn diagrams demonstrating a complete system and the idea of total probability 
-</figcaption>
-</figure>
-
-
-<figure style="margin-top: 0; padding-top: 0;">
-    <iframe src="https://www.geogebra.org/classic/xhdccg7y?embed" title='Interactive GeoGebra applet showing the vector projection and dot product.' frameborder='0' height="700px" width="100%" style="border: 1px solid #ddd; margin-top: 0; padding-top: 0;" allowfullscreen>Your browser does not support iframes. View the interactive applet <a href="https://www.geogebra.org/classic/xhdccg7y" target="_blank" rel="noopener">here</a>.</iframe>
-    <figcaption style="font-size:0.875em"> <em>Figure 2.</em> The shaded region under the Gaussian curve represents the probability of the variable falling within that interval. You can adjust sliders to change the bounds and see how the shaded probability region updates in real time. Click on the symbol in the bottom right corner to open the applet in full-screen mode.
-    If the applet does not load, you can open it directly <a href="https://www.geogebra.org/classic/xhdccg7y" target="_blank" rel="noopener">here</a>.</figcaption>
-</figure>
-
-
-| Header Name 1    | Header Name 2    | Header Name 3    | 
-|:----------------:|:----------------:|:----------------:|
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-| column content 1 | column content 2 | column content 3 |
-
-<br>
-
-
-
-
-____________________________________________________________________TABLE ONLY____________________________________________________________________
 <table class = "language-python">
     <tr>
-        <th>Header name 1</th>
-        <th>Header name 2</th>
-        <th>Header name 3</th>
+        <th>Type</th>
+        <th>Potential Charts</th>
     </tr>
     <tr>
+        <td><strong>Showing change over time</strong></td>
         <td>
-            <strong>Row content 1</strong>
             <ul>
-                <li> ______________________________________________ </li>
-                <li> ______________________________________________ </li>
+                <li> Line chart </li>
             </ul>
         </td>
+    </tr>
+    <tr>
+        <td><strong>Showing a part-to-whole composition</strong></td>
         <td>
-<pre>
-<code class = "language-python">
-# _________________explanation_________________
-
-_________________setup_________________
-
-# test
-_________________code_________________
-
-'''
-_________________rendered output_________________
-'''
-</code>
-</pre>
+            <ul>
+                <li> Pie hcart </li>
+            </ul>
         </td>
+    </tr>
+    <tr>
+        <td><strong>How data are distributed</strong></td>
         <td>
-<pre>
-<code class = "language-python">
-# _________________explanation_________________
-
-_________________setup_________________
-
-# test
-_________________code_________________
-
-'''
-_________________rendered output_________________
-'''
-</code>
-</pre>
+            <ul>
+                <li> KDE plot </li>
+                <li> Displot chart </li>
+                <li> Boxplot </li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Comparing values between groups</strong></td>
+        <td>
+            <ul>
+                <li> Count plot </li>
+                <li> Stacked bar chart </li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Observing relationships between variables</strong></td>
+        <td>
+            <ul>
+                <li> Bubble chart </li>
+                <li> Heatmap </li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Dominant Feature Presentation</strong></td>
+        <td>
+            <ul>
+                <li> Tag cloud chart </li>
+            </ul>
         </td>
     </tr>
 </table>
-<br>
-
-
-
-____________________________________________________________________COLLAPSIBLE BLOCK WITH TABLE INSIDE____________________________________________________________________
-<details class = "bordered-block">
-    <summary>
-        <strong>Practice Exercises</strong>
-    </summary>
-    <div class = "inside-bordered-block language-python">
-        <strong>Exercise 1:</strong> _____________________________________________________
-        <br>
-        <strong>Exercise 2:</strong> _____________________________________________________
-        <table class = "language-python">
-            <tr>
-                <th>Header name 1</th>
-                <th>Header name 2</th>
-                <th>Header name 3</th>
-            </tr>
-            <tr>
-                <td>
-                    <strong>Row content 1</strong>
-                    <ul>
-                        <li> ______________________________________________ </li>
-                        <li> ______________________________________________ </li>
-                    </ul>
-                </td>
-                <td>
-<pre>
-<code class = "language-python">
-# _________________explanation_________________
-
-_________________setup_________________
-
-# test
-_________________code_________________
-
-'''
-_________________rendered output_________________
-'''
-</code>
-</pre>
-                </td>
-                <td>
-<pre>
-<code class = "language-python">
-# _________________explanation_________________
-
-_________________setup_________________
-
-# test
-_________________code_________________
-
-'''
-_________________rendered output_________________
-'''
-</code>
-</pre>
-                </td>
-            </tr>
-        </table>
-        <br>
-        <strong>Exercise 3:</strong> _____________________________________________________
-    </div>
-</details>
-<br>
-
-
-
-____________________________________________________________________COLLAPSIBLE BLOCK WITH EXERCISES ONLY____________________________________________________________________
-<details class = "bordered-block">
-    <summary>
-        <strong>Practice Exercises</strong>
-    </summary>
-    <div class = "bordered-inner-block language-python">
-        <strong>Exercise 1:</strong> ____________________________________________________________________________ 
-        <br>
-        <strong>Exercise 2:</strong> ____________________________________________________________________________ 
-        <br>
-        <strong>Hints:</strong> ____________________________________________________________________________ 
-        <br>
-        <strong>Exercise 3:</strong> ____________________________________________________________________________ 
-        <ul>
-            <li> ______________________________________________ </li>
-            <li> ______________________________________________ </li>
-        </ul>
-        <strong>Exercise 4:</strong> ____________________________________________________________________________ 
-        <ol>
-            <li> ______________________________________________ </li>
-            <li> ______________________________________________ </li>
-        </ol>
-    </div>
-</details>
-<br>
-
-
-
-____________________________________________________________________COLLAPSIBLE BLOCK WITH EXERCISES AND CODE____________________________________________________________________
-<details class = "bordered-block">
-    <summary>
-        <strong>Practice Exercises</strong>
-    </summary>
-    <div class = "bordered-inner-block language-python">
-        <strong>Exercise 1:</strong> ____________________________________________________________________________ 
-<pre>
-<code class = "language-python">
-_________________code_________________
-</code>
-</pre>
-        <strong>Exercise 2:</strong> ____________________________________________________________________________ 
-        <br>
-        <strong>Exercise 3:</strong> ____________________________________________________________________________ 
-        <ol>
-            <li> ______________________________________________ </li>
-            <li> ______________________________________________ </li>
-        </ol>
-        <strong>Exercise 4:</strong> ____________________________________________________________________________ 
-        <ul>
-            <li> ______________________________________________ </li>
-            <li> ______________________________________________ </li>
-        </ul>
-    </div>
-</details>
-<br>
-
-
-
-
-1. **_______main idea_________:** ______________________content - explanation_________________________
-2. **_______main idea_________:** ______________________content - explanation_________________________
-3. **_______main idea_________:** ______________________content - explanation_________________________
-    - **_______main idea_________:** ______________________content - explanation_________________________
-    - **_______main idea_________:** ______________________content - explanation_________________________
-    - **_______main idea_________:** ______________________content - explanation_________________________
-
-
-
-
-- **_______main idea_________:** ______________________content - explanation_________________________
-- **_______main idea_________:** ______________________content - explanation_________________________
-- **_______main idea_________:** ______________________content - explanation_________________________
-
-
-
-
-:bulb: **Applications in AI**
-
-
-
-
-:pushpin: **Pro tip:** __________________________________________________________________
-
-
-
-
-:warning: __________________________________________________________________
-
-
-
-
-:heavy_exclamation mark: __________________________________________________________________
-
-
-
-
-:question: **__________________________________________________________________?**
-
-
-
-
-```python
-__________________________________________________
-
->>>
-```
-
-
-
-
-❌
-✅
-⚠️
-
-
-
 
 <hr>
 
@@ -607,25 +415,17 @@ Here are some good questions asked during class. The answers to these questions 
 
 | Questions | Answers |
 |-----------|---------|
-| Question | Answer |
-| Question | Answer |
-| Question | Answer |
-| Question | Answer |
-| Question | Answer |
-| Question | Answer |
-| Question | Answer |
-| Question | Answer |
-| Question | Answer |
-| Question | Answer |
-| Question | Answer |
+| Is there anything else I need to learn when doing data visualization? | You also need to learn how to choose which visuals to show for audience to understand the gist of your contribution. |
+| How can I make my visuals colorful and beautiful? | You can use tools and combine libraries to make your visualizations beautiful. |
+| What do I do if a dataset is too large? | You need to pick a suitable sample and visualize it, then generalize it to the population. |
 
 
 <br>
 
-#### Check List
+<!-- #### Check List
 
 - [x] Exercise 1 (date)
 - [ ] Exercise 2 (date)
   - [x] Put on left sock
   - [ ] Put on right sock
-- [x] Go to school
+- [x] Go to school -->

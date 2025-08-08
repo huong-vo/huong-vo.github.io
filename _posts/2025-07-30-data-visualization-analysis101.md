@@ -632,10 +632,10 @@ df_weather.loc[:, ['Temperature (C)']].describe()
     max        39.905556
 ```
 
-The numbers $25%$, $50%$, and $75%$ are called **k-th percentiles** where $k$ is the percentage.
-- $50%$ is the median.
-- $25%$ means one fourth of the sorted dataset from minimum.
-- $75%$ means one fourth of the sorted dataset from maximum.
+The numbers $25\%$, $50\%$, and $75\%$ are called **k-th percentiles** where $k$ is the percentage.
+- $50\%$ is the median.
+- $25\%$ means one fourth of the sorted dataset from minimum.
+- $75\%$ means one fourth of the sorted dataset from maximum.
 
 Using percentiles, we can indicate if the distribution of a dataset is more left-skewed or right-skewed.
 
