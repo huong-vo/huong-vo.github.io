@@ -14,7 +14,7 @@ toc:                                          # table of contents
 
 **Acknowledgement:** This post is based mainly on Dr. Quang-Vinh Dinh's presentation and slides and partly on on TA, STA, and peers' responses from the course AIO2025 offered by AI VIETNAM.
 
-**Relevance:** The audience of this lecture were those who have read [Math for AI 106]({% post_url 2025-07-18-math106 %}), had some coding experience, and known a bit of AI knowledge. Absolute beginners are encouraged to read the material and repeatedly practice coding without AI assistance to strengthen their coding and code-reading skills. Note that only necessary pandas knowledge is introduced here.
+**Relevance:** The audience of this lecture were those who have read [Math for AI 106]({% post_url 2025-07-18-math106 %}), had some coding experience, and known a bit of AI knowledge. 
 
 In today's post, we'll explore pandas Series and DataFrame. We'll also discuss some applications in AI including processing missing values, noise reduction, and data visualization.
 

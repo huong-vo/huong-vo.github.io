@@ -17,12 +17,9 @@ toc:                                          # table of contents
 
 **Acknowledgement:** This post is based mainly on Vinh Dinh Nguyen's presentation and slides and partly on on TA, STA, and peers' responses from the course AIO2025 offered by AI VIETNAM.
 
-**Relevance:** The audience of this lecture were those who have read [Data Visualization and Analysis for AI 101]({% post_url 2025-07-30-data-visualization-analysis101 %}), had some coding experience, and known a bit of AI knowledge. Absolute beginners are encouraged to read the material and repeatedly practice coding without AI assistance to strengthen their coding and code-reading skills. Note that only necessary pandas knowledge is introduced here.
+**Relevance:** The audience of this lecture were those who have read [Data Visualization and Analysis for AI 101]({% post_url 2025-07-30-data-visualization-analysis101 %}), had some coding experience, and known a bit of AI knowledge. 
 
-> ______________________quote______________________ <br>
-> -quoter's name
-
-Visualizing data *properly* plays a significant role in learning how data is distributed and related before we delve into complex data analysis. In today's post, we'll explore common types of charts used in data visualization and more importantly, how to choose the right one for our dataset in general. We'll look at real-world examples and case studies to see how different chart types work in action, giving more hands-on feel for the process. We'll also discuss some applications in AI including _____________________.
+Visualizing data *properly* plays a significant role in learning how data is distributed and related before we delve into complex data analysis. In today's post, we'll explore common types of charts used in data visualization and more importantly, how to choose the right one for our dataset in general. We'll look at real-world examples and case studies to see how different chart types work in action, giving more hands-on feel for the process.
 
 <hr>
 
@@ -117,7 +114,7 @@ Some abbreviations used in this dataset are in the following table.
 
 <br>
 
-{% include figure.liquid loading="eager" path="assets\aio2025\M03W01\friday_etth_head5.png" class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true max-width="400px" max-height="450px" alt="the first five rows of the ETD" caption="<em>Figure 1.</em>The first five rows of the ETD" %}
+{% include figure.liquid loading="eager" path="assets\aio2025\M03W01\friday_etth_head5.png" class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true max-width="600px" max-height="500px" alt="the first five rows of the ETD" caption="<em>Figure 2.</em>The first five rows of the ETD" %}
 
 First off, this dataset contains *temporal data* since it is in time series format. Let's raise some relevant questions and see what charts might resolve them.
 
@@ -264,7 +261,7 @@ A **pie chart** shows the distribution of a dataset or relative contribution of 
 
 ## **Case Study 2: [Student Performance Dataset (SPD)](https://www.kaggle.com/datasets/spscientist/students-performance-in-exams)**
 
-{% include figure.liquid loading="eager" path="assets\aio2025\M03W01\friday_sp_head5.png" class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true max-width="400px" max-height="450px" alt="the first five rows of the SPD" caption="<em>Figure .</em>The first five rows of the SPD" %}
+{% include figure.liquid loading="eager" path="assets\aio2025\M03W01\friday_sp_head5.png" class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true max-width="600px" max-height="500px" alt="the first five rows of the SPD" caption="<em>Figure .</em>The first five rows of the SPD" %}
 
 ### **Count Plot** 
 A **count plot** is a column chart and basically used to count and show the number of observations in a dataset. It is very useful for categorical/non-numerical data points. 
@@ -288,7 +285,7 @@ A **count plot** is a column chart and basically used to count and show the numb
 
 ## **Case Study 3: [Iris Dataset (IrD)](https://www.kaggle.com/datasets/saurabh00007/iriscsv)**
 
-{% include figure.liquid loading="eager" path="assets\aio2025\M03W01\friday_ir_head5.png" class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true max-width="400px" max-height="450px" alt="the first five rows of the IrD" caption="<em>Figure .</em>The first five rows of the IrD" %}
+{% include figure.liquid loading="eager" path="assets\aio2025\M03W01\friday_ir_head5.png" class="img-fluid rounded z-depth-1 mx-auto d-block" zoomable=true max-width="600px" max-height="500px" alt="the first five rows of the IrD" caption="<em>Figure .</em>The first five rows of the IrD" %}
 
 ### **Histogram**
 A **histogram** is used to display the frequency distribution of a variable with horizontal or vertical bins. We came across this chart type when discussing image data. 
