@@ -84,3 +84,17 @@ table pre {
   overflow-x: auto; // Enable horizontal scrolling for long lines in tables
   white-space: pre-wrap; // Preserve whitespace and allow wrapping
 }
+
+// math in a div box 
+.math-box {
+  border: 2px solid #3b6fa6;
+  background: #f5faff;
+  margin: 10px 20px 0 20px;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: left;
+  overflow-x: scroll;
+  overflow-wrap: anywhere;   /* allow breaking inside long math text */
+  white-space: normal;       /* ensures wrapping */
+  word-break: break-word;    /* fallback for very long tokens */
+}
