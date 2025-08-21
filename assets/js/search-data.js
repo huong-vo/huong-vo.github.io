@@ -79,11 +79,77 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/languages/";
               },
-            },{id: "post-math-for-ai-106",
+            },{id: "post-machine-learning-102",
+        
+          title: "Machine Learning 102",
+        
+        description: "KNN, supervised learning, classification, regression, K-D Tree",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/KNN102/";
+          
+        },
+      },{id: "post-machine-learning-101",
+        
+          title: "Machine Learning 101",
+        
+        description: "K-Means, unsupervised learning",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/KMeans101/";
+          
+        },
+      },{id: "post-machine-learning-101-warm-up",
+        
+          title: "Machine Learning 101 Warm-up",
+        
+        description: "KNN, supervised learning, classification, regression",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/KNN-pre101/";
+          
+        },
+      },{id: "post-data-visualization-and-analysis-for-ai-102",
+        
+          title: "Data Visualization and Analysis for AI 102",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/data-visualization-analysis102/";
+          
+        },
+      },{id: "post-data-visualization-and-analysis-for-ai-101",
+        
+          title: "Data Visualization and Analysis for AI 101",
+        
+        description: "pandas, series, dataframe, visualization, seaborn",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/data-visualization-analysis101/";
+          
+        },
+      },{id: "post-data-visualization-and-analysis-for-ai-101-warm-up",
+        
+          title: "Data Visualization and Analysis for AI 101 Warm-up",
+        
+        description: "pandas, series, dataframe, visualization, seaborn",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/data-visualization-analysis-pre101/";
+          
+        },
+      },{id: "post-math-for-ai-106",
         
           title: "Math for AI 106",
         
-        description: "mean, correlation, covariance, correlation coefficient",
+        description: "population vs sample, covariance, correlation, regression, causation",
         section: "Posts",
         handler: () => {
           
@@ -171,7 +237,7 @@ ninja.data = [{
         
           title: "Math for AI 102",
         
-        description: "linear algebra",
+        description: "matrix, cosine similarity",
         section: "Posts",
         handler: () => {
           
@@ -182,7 +248,7 @@ ninja.data = [{
         
           title: "Math for AI 101",
         
-        description: "numpy matrix, image brightness",
+        description: "numpy, matrix, image brightness",
         section: "Posts",
         handler: () => {
           
@@ -314,7 +380,7 @@ ninja.data = [{
         
           title: "Python for AI 102",
         
-        description: "basic errors, loop",
+        description: "basic errors, loops",
         section: "Posts",
         handler: () => {
           
@@ -325,7 +391,7 @@ ninja.data = [{
         
           title: "Python for AI 101",
         
-        description: "basic data types, function, condition",
+        description: "basic data types, functions, conditions",
         section: "Posts",
         handler: () => {
           
