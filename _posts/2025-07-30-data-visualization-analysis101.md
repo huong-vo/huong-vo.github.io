@@ -338,7 +338,7 @@ In the example above, pandas considered 100 and 7 for the first `np.nan`.
                 <th>Interpolation</th>
             </tr>
             <tr>
-                <td><strong>Solution</strong></td>
+                <th scope='row'>Solution</th>
                 <td class = "centered_td">
                     <ul>
                         <li> Compute distance from $x_3$ to $x_1$ and $x_2$. </li>
@@ -357,7 +357,7 @@ In the example above, pandas considered 100 and 7 for the first `np.nan`.
                 </td>
             </tr>
             <tr>
-                <td><strong>Application</strong></td>
+                <th scope='row'>Application</th>
                 <td class = "centered_td">
                     <ul>
                         <li> If objects in an image are straight up perpendicular to the edges, they should look fine when the image is scaled.  </li>
